@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>장바구니 및 결제 - 답례 : ON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== 헤더 ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="../../main/index.html" class="logo" aria-label="답례 ON 홈">
+        <svg class="logo__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="8" width="18" height="4" rx="1"/>
+          <path d="M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8"/>
+          <path d="M12 8v13"/>
+          <path d="M12 8S10.5 3 8 3a2.5 2.5 0 0 0 0 5h4zM12 8s1.5-5 4-5a2.5 2.5 0 0 1 0 5h-4z"/>
+        </svg>
+        <span class="logo__text">답례 : <em>ON</em></span>
+      </a>
+
+      <nav class="gnb" aria-label="주요 메뉴">
+        <a href="../list/index.html">상품 찾기</a>
+        <a href="../list/index.html">소량 답례품</a>
+        <a href="../map/index.html">지역 커뮤니티</a>
+        <a href="../order/index.html">주문 내역</a>
+        <a href="../mypage/index.html">마이페이지</a>
+      </nav>
+
+      <div class="util">
+        <button type="button" class="util__btn" aria-label="검색">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <a href="index.html" class="util__btn util__cart" aria-label="장바구니, 상품 3개" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2.2 11h10.6L20.5 7H6.6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="16.5" cy="19.5" r="1.4"/></svg>
+          <span class="util__count">3</span>
+        </a>
+        <a href="../money_on/index.html" class="util__money">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"/><path d="M15 13.5h5"/></svg>
+          <span>머니ON</span>
+        </a>
+        <a href="../mypage/index.html" class="util__btn" aria-label="내 정보">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== 상단 배너 ===== -->
+    <section class="banner">
+      <div class="banner__inner">
+        <div class="banner__copy">
+          <h1>소중한 마음, 좋은 답례로</h1>
+          <p>선택하신 상품을 확인하고, 안전하고 간편하게 결제하세요.</p>
+        </div>
+        <div class="banner__photo" aria-hidden="true">
+          <span class="banner__gift">🎁</span>
+          <span class="banner__flower">💐</span>
+        </div>
+        <p class="banner__quote">좋은 마음이<br>더 좋은 인연이 됩니다.</p>
+      </div>
+    </section>
+
+    <form class="container" action="#">
+
+      <!-- ===== 왼쪽 ===== -->
+      <div class="col">
+
+        <!-- 장바구니 -->
+        <section class="card cart">
+          <div class="card__head">
+            <h2>장바구니 3개 상품</h2>
+            <label class="check check--right">전체 선택<input type="checkbox" checked><span></span></label>
+          </div>
+
+          <ul class="cart__list">
+            <li class="cart__item">
+              <label class="check"><input type="checkbox" checked aria-label="수제 쿠키 답례 세트 선택"><span></span></label>
+              <span class="cart__thumb thumb--1" aria-hidden="true">🍪</span>
+              <div class="cart__info">
+                <p class="cart__seller">달콤한하루</p>
+                <p class="cart__name">수제 쿠키 답례 세트</p>
+                <p class="cart__option"><span>옵션</span>오리지널 (6구)</p>
+              </div>
+              <div class="stepper">
+                <button type="button" aria-label="수량 줄이기">−</button>
+                <output>1</output>
+                <button type="button" aria-label="수량 늘리기">+</button>
+              </div>
+              <p class="cart__price">28,000원</p>
+            </li>
+            <li class="cart__item">
+              <label class="check"><input type="checkbox" checked aria-label="프리미엄 꿀 답례품 선택"><span></span></label>
+              <span class="cart__thumb thumb--2" aria-hidden="true">🍯</span>
+              <div class="cart__info">
+                <p class="cart__seller">자연담은</p>
+                <p class="cart__name">프리미엄 꿀 답례품</p>
+                <p class="cart__option"><span>옵션</span>아카시아꿀 250g (2개)</p>
+              </div>
+              <div class="stepper">
+                <button type="button" aria-label="수량 줄이기">−</button>
+                <output>2</output>
+                <button type="button" aria-label="수량 늘리기">+</button>
+              </div>
+              <p class="cart__price">40,000원</p>
+            </li>
+            <li class="cart__item">
+              <label class="check"><input type="checkbox" checked aria-label="행복을 전하는 반려식물 선택"><span></span></label>
+              <span class="cart__thumb thumb--3" aria-hidden="true">🪴</span>
+              <div class="cart__info">
+                <p class="cart__seller">초록마을</p>
+                <p class="cart__name">행복을 전하는 반려식물</p>
+                <p class="cart__option"><span>옵션</span>스투키 화분 + 메시지 카드</p>
+              </div>
+              <div class="stepper">
+                <button type="button" aria-label="수량 줄이기">−</button>
+                <output>1</output>
+                <button type="button" aria-label="수량 늘리기">+</button>
+              </div>
+              <p class="cart__price">32,000원</p>
+            </li>
+          </ul>
+
+          <div class="cart__foot">
+            <div class="cart__actions">
+              <button type="button" class="btn-sub">선택상품 삭제</button>
+              <button type="button" class="btn-sub">장바구니 비우기</button>
+            </div>
+            <p class="cart__total">선택 상품금액 <strong>100,000원</strong></p>
+          </div>
+        </section>
+
+        <!-- 배송 정보 -->
+        <section class="card ship">
+          <div class="card__head">
+            <h2>배송 정보 확인</h2>
+            <a href="../name/index.html" class="btn-sub">배송지 변경</a>
+          </div>
+          <div class="ship__grid">
+            <dl>
+              <div><dt>받는 사람</dt><dd><strong>김답례</strong></dd></div>
+              <div><dt>연락처</dt><dd>010-1234-5678</dd></div>
+              <div><dt>배송지</dt><dd>(06234) 서울특별시 강남구 테헤란로 123, 답례빌딩 5층</dd></div>
+            </dl>
+            <dl>
+              <div><dt>배송 방법</dt><dd><strong>일반택배</strong></dd></div>
+              <div><dt>배송 예정</dt><dd>2024년 11월 20일 (수) 예정</dd></div>
+              <div><dt>배송 요청</dt><dd>문 앞에 놓아주세요.</dd></div>
+            </dl>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===== 오른쪽 ===== -->
+      <div class="col">
+
+        <!-- 주문 금액 요약 -->
+        <section class="card">
+          <h2 class="card__title">주문 금액 요약</h2>
+          <dl class="sum">
+            <div><dt>상품 금액</dt><dd>100,000원</dd></div>
+            <div><dt>배송비 <i class="hint" title="묶음 배송 기준입니다">?</i></dt><dd>0원</dd></div>
+            <div><dt>할인 금액</dt><dd>0원</dd></div>
+          </dl>
+          <p class="sum__total">최종 결제 예정 금액 <strong>100,000원</strong></p>
+        </section>
+
+        <!-- 포인트 + 결제 -->
+        <section class="card pay-card">
+          <div class="card__head">
+            <h2>머니ON 포인트 사용</h2>
+            <span class="point__have">보유 12,000P</span>
+          </div>
+          <div class="point">
+            <input type="number" value="0" min="0" max="12000" aria-label="사용할 포인트">
+            <button type="button" class="point__btn">P 사용</button>
+            <button type="button" class="point__btn point__btn--all">모두 사용</button>
+          </div>
+
+          <h2 class="card__title card__title--gap">결제 방식 선택</h2>
+          <label class="pay">
+            <input type="radio" name="pay" value="full" checked>
+            <span class="pay__mark"></span>
+            <span class="pay__text">
+              <strong>전체 금액 결제</strong>
+              <small>지금 한번에 100,000원을 결제합니다.</small>
+            </span>
+          </label>
+          <label class="pay">
+            <input type="radio" name="pay" value="deposit">
+            <span class="pay__mark"></span>
+            <span class="pay__text">
+              <strong>예약금 10% 결제</strong>
+              <small>지금 10,000원만 결제하고, 잔금은 추후 결제합니다.</small>
+            </span>
+          </label>
+
+          <div class="notice">
+            <ul>
+              <li>예약금 결제는 판매자가 허용한 주문에만 적용됩니다.</li>
+              <li>잔금은 행사일 7일 전까지 결제해야 하며, 결제 시 별도 안내를 드립니다.</li>
+              <li>예약금 결제 후에는 판매자 정책에 따라 취소 및 환불이 제한될 수 있습니다.</li>
+            </ul>
+            <a href="#" class="notice__more">자세히 보기 <span aria-hidden="true">&gt;</span></a>
+          </div>
+
+          <label class="check agree"><input type="checkbox" required><span></span>주문 내용을 확인했으며, 결제에 동의합니다. <em>(필수)</em></label>
+          <button type="submit" class="btn-pay">결제하기</button>
+        </section>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- ===== AI 챗봇 플로팅 버튼 ===== -->
+  <a href="#chatbot" class="chatbot" aria-label="AI 챗봇 담이 열기">
+    <span class="chatbot__face">🤖</span>
+    <span class="chatbot__label">AI 챗봇<br>'담이'</span>
+  </a>
+
+  <!-- ===== AI 챗봇 패널 (챗봇 버튼을 누르면 표시) ===== -->
+  <div class="chatpanel" id="chatbot">
+    <iframe src="../chatbot/index.html" title="AI 챗봇 담이" loading="lazy"></iframe>
+    <a href="#close" class="chatpanel__close" aria-label="챗봇 닫기">×</a>
+  </div>
+
+</body>
+</html>

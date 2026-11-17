@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지역 커뮤니티 및 내 주변 셀러 - 답례 : ON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== 헤더 ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="../../main/index.html" class="logo" aria-label="답례 ON 홈">
+        <svg class="logo__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="8" width="18" height="4" rx="1"/>
+          <path d="M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8"/>
+          <path d="M12 8v13"/>
+          <path d="M12 8S10.5 3 8 3a2.5 2.5 0 0 0 0 5h4zM12 8s1.5-5 4-5a2.5 2.5 0 0 1 0 5h-4z"/>
+        </svg>
+        <span class="logo__text">답례 : <em>ON</em></span>
+      </a>
+
+      <nav class="gnb" aria-label="주요 메뉴">
+        <a href="../list/index.html">상품 찾기</a>
+        <a href="../list/index.html">소량 답례품</a>
+        <a href="index.html" aria-current="page">지역 커뮤니티</a>
+        <a href="../order/index.html">주문 내역</a>
+        <a href="../mypage/index.html">마이페이지</a>
+      </nav>
+
+      <div class="util">
+        <button type="button" class="util__btn" aria-label="검색">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <a href="../bag/index.html" class="util__btn" aria-label="장바구니">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2.2 11h10.6L20.5 7H6.6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="16.5" cy="19.5" r="1.4"/></svg>
+        </a>
+        <a href="../money_on/index.html" class="util__money">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"/><path d="M15 13.5h5"/></svg>
+          <span>머니ON</span>
+        </a>
+        <a href="../mypage/index.html" class="util__btn" aria-label="내 정보">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== 상단 배너 ===== -->
+    <section class="banner">
+      <div class="banner__inner">
+        <div class="banner__copy">
+          <h1>우리 동네의 특별한 답례품,<br>지역에서도 만나는 <strong>답례 : ON</strong></h1>
+          <p>가까운 셀러를 만나고, 지역의 이야기를 함께 나눠보세요.</p>
+        </div>
+        <div class="banner__street" aria-hidden="true">🏘️ 🌳 🏡</div>
+        <div class="signboard" aria-hidden="true">
+          <span class="signboard__icon">🎁</span>
+          좋은 마음이<br>더 가까운 곳에
+          <strong>답례 : ON</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- ===== 왼쪽: 셀러 목록 ===== -->
+      <section class="sellers" aria-label="내 주변 셀러">
+        <form class="finder" role="search" action="#">
+          <button type="button" class="finder__region">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 15 5 9.5a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            서울특별시 강남구
+            <i class="caret"></i>
+          </button>
+          <svg class="finder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" class="finder__input" placeholder="지역, 매장명, 상품명으로 검색하세요." aria-label="지역, 매장명, 상품명 검색">
+          <button type="submit" class="finder__btn">검색</button>
+        </form>
+
+        <div class="filter">
+          <ul class="filter__tabs">
+            <li><a href="#" class="is-active">전체 (24)</a></li>
+            <li><a href="#">강남구 (8)</a></li>
+            <li><a href="#">서초구 (6)</a></li>
+            <li><a href="#">송파구 (5)</a></li>
+            <li><a href="#">강동구 (5)</a></li>
+          </ul>
+          <button type="button" class="filter__sort">가까운 순 <i class="caret"></i></button>
+        </div>
+
+        <ul class="seller-list">
+          <li class="seller">
+            <span class="seller__photo photo--1" aria-hidden="true">🪴</span>
+            <div class="seller__info">
+              <h2>디어플라워 강남점 <span class="pickup">방문 수령 가능</span></h2>
+              <p class="seller__addr">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 15 5 9.5a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                서울 강남구 테헤란로 123 <b>0.3km</b>
+              </p>
+              <p class="seller__desc">꽃과 함께 전하는 특별한 마음</p>
+              <ul class="tags"><li>꽃답례품</li><li>디퓨저</li><li>캔들</li><li>선물세트</li></ul>
+            </div>
+            <div class="seller__side">
+              <span class="seller__item item--1" aria-hidden="true">💐</span>
+              <button type="button" class="seller__like" aria-label="디어플라워 강남점 찜하기">♡</button>
+              <a href="#" class="seller__ask">판매자 문의</a>
+            </div>
+          </li>
+
+          <li class="seller">
+            <span class="seller__photo photo--2" aria-hidden="true">🧁</span>
+            <div class="seller__info">
+              <h2>달콤한 하루 <span class="pickup">방문 수령 가능</span></h2>
+              <p class="seller__addr">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 15 5 9.5a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                서울 서초구 서초대로 45 <b>1.2km</b>
+              </p>
+              <p class="seller__desc">정성을 담은 수제 디저트 답례품</p>
+              <ul class="tags"><li>수제쿠키</li><li>마카롱</li><li>답례세트</li><li>간식선물</li></ul>
+            </div>
+            <div class="seller__side">
+              <span class="seller__item item--2" aria-hidden="true">🍪</span>
+              <button type="button" class="seller__like" aria-label="달콤한 하루 찜하기">♡</button>
+              <a href="#" class="seller__ask">판매자 문의</a>
+            </div>
+          </li>
+
+          <li class="seller">
+            <span class="seller__photo photo--3" aria-hidden="true">🛍️</span>
+            <div class="seller__info">
+              <h2>온기상점 <span class="pickup">방문 수령 가능</span></h2>
+              <p class="seller__addr">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 15 5 9.5a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                서울 송파구 올림픽로 78 <b>2.1km</b>
+              </p>
+              <p class="seller__desc">일상의 특별함을 담은 라이프스타일 선물</p>
+              <ul class="tags"><li>머그컵</li><li>텀블러</li><li>생활소품</li><li>선물포장</li></ul>
+            </div>
+            <div class="seller__side">
+              <span class="seller__item item--3" aria-hidden="true">☕</span>
+              <button type="button" class="seller__like" aria-label="온기상점 찜하기">♡</button>
+              <a href="#" class="seller__ask">판매자 문의</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===== 가운데: 지도 ===== -->
+      <section class="map" aria-label="셀러 위치 지도">
+        <div class="map__river"></div>
+        <div class="map__park map__park--1"></div>
+        <div class="map__park map__park--2"></div>
+        <div class="map__road map__road--h1"></div>
+        <div class="map__road map__road--h2"></div>
+        <div class="map__road map__road--h3"></div>
+        <div class="map__road map__road--v1"></div>
+        <div class="map__road map__road--v2"></div>
+        <div class="map__road map__road--v3"></div>
+        <div class="map__road map__road--main"></div>
+
+        <span class="map__label map__label--1">강남구</span>
+        <span class="map__label map__label--2">서초구</span>
+
+        <button type="button" class="map__search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 15 5 9.5a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          현재 지도에서 검색하기
+        </button>
+
+        <a href="#" class="map__popup">
+          <span class="map__popup-photo photo--1" aria-hidden="true">🪴</span>
+          <span class="map__popup-text">
+            <strong>디어플라워 강남점</strong>
+            <span>0.3km · 방문 수령 가능</span>
+            <span>자세히 보기 &gt;</span>
+          </span>
+        </a>
+
+        <button type="button" class="pin pin--on pin--1" aria-label="디어플라워 강남점"></button>
+        <button type="button" class="pin pin--on pin--2" aria-label="달콤한 하루"></button>
+        <button type="button" class="pin pin--3" aria-label="온기상점"></button>
+        <button type="button" class="pin pin--4" aria-label="셀러 위치"></button>
+        <button type="button" class="pin pin--5" aria-label="셀러 위치"></button>
+
+        <div class="map__ctrl">
+          <div class="map__zoom">
+            <button type="button" aria-label="지도 확대">+</button>
+            <button type="button" aria-label="지도 축소">−</button>
+          </div>
+          <button type="button" class="map__locate" aria-label="내 위치로 이동">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ===== 오른쪽: 커뮤니티 ===== -->
+      <aside class="community">
+        <section class="card">
+          <div class="card__head">
+            <h2>우리 동네 이야기</h2>
+            <a href="#" class="more">더보기 <span aria-hidden="true">&gt;</span></a>
+          </div>
+          <ul class="tabs">
+            <li><a href="#" class="is-active">전체</a></li>
+            <li><a href="#">후기</a></li>
+            <li><a href="#">추천요청</a></li>
+            <li><a href="#">자유게시판</a></li>
+          </ul>
+          <ul class="posts">
+            <li>
+              <a href="#" class="post">
+                <span class="post__thumb thumb--1" aria-hidden="true">🕯️</span>
+                <span class="post__text">
+                  <strong>강남구에서 소규모 돌잔치 답례품 추천해요!</strong>
+                  <span class="post__meta">추천요청<i>|</i>2시간 전<i>|</i>댓글 8</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="post">
+                <span class="post__thumb thumb--2" aria-hidden="true">🍪</span>
+                <span class="post__text">
+                  <strong>서초구 '달콤한 하루' 쿠키 답례품 후기</strong>
+                  <span class="post__meta">후기<i>|</i>5시간 전<i>|</i>댓글 12</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="post">
+                <span class="post__thumb thumb--3" aria-hidden="true">🏘️</span>
+                <span class="post__text">
+                  <strong>강남역 근처에서 직접 볼 수 있는 매장 있을까요?</strong>
+                  <span class="post__meta">자유게시판<i>|</i>1일 전<i>|</i>댓글 6</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <div class="card__head">
+            <h2>이런 후기가 있어요</h2>
+            <a href="#" class="more">더보기 <span aria-hidden="true">&gt;</span></a>
+          </div>
+          <article class="review">
+            <div class="review__body">
+              <div class="review__who">
+                <span class="review__avatar" aria-hidden="true">🧑</span>
+                <strong>행복한오늘</strong>
+                <span class="review__region">서울 강남구</span>
+              </div>
+              <p class="review__stars" aria-label="별점 5점"><span aria-hidden="true">★★★★★</span> 5</p>
+              <p class="review__text">직접 방문해서 보고 구매했는데, 포장도 너무 예쁘고 사장님도 친절하셨어요. 또 이용하고 싶어요!</p>
+            </div>
+            <span class="review__photo" aria-hidden="true">🎁</span>
+          </article>
+        </section>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ===== AI 챗봇 플로팅 버튼 ===== -->
+  <a href="#chatbot" class="chatbot" aria-label="AI 챗봇 담이 열기">
+    <span class="chatbot__face">🤖</span>
+    <span class="chatbot__label">AI 챗봇<br>'담이'</span>
+  </a>
+
+  <!-- ===== AI 챗봇 패널 (챗봇 버튼을 누르면 표시) ===== -->
+  <div class="chatpanel" id="chatbot">
+    <iframe src="../chatbot/index.html" title="AI 챗봇 담이" loading="lazy"></iframe>
+    <a href="#close" class="chatpanel__close" aria-label="챗봇 닫기">×</a>
+  </div>
+
+</body>
+</html>

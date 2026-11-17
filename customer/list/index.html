@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품 찾기 - 답례 : ON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== 헤더 ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="../../main/index.html" class="logo" aria-label="답례 ON 홈">
+        <svg class="logo__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="8" width="18" height="4" rx="1"/>
+          <path d="M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8"/>
+          <path d="M12 8v13"/>
+          <path d="M12 8S10.5 3 8 3a2.5 2.5 0 0 0 0 5h4zM12 8s1.5-5 4-5a2.5 2.5 0 0 1 0 5h-4z"/>
+        </svg>
+        <span class="logo__text">답례 : <em>ON</em></span>
+      </a>
+
+      <nav class="gnb" aria-label="주요 메뉴">
+        <a href="index.html" aria-current="page">상품 찾기</a>
+        <a href="index.html">소량 답례품</a>
+        <a href="../map/index.html">지역 커뮤니티</a>
+        <a href="../order/index.html">주문 내역</a>
+        <a href="../mypage/index.html">마이페이지</a>
+      </nav>
+
+      <div class="util">
+        <button type="button" class="util__btn" aria-label="검색">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <a href="../bag/index.html" class="util__btn" aria-label="장바구니">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2.2 11h10.6L20.5 7H6.6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="16.5" cy="19.5" r="1.4"/></svg>
+        </a>
+        <a href="../money_on/index.html" class="util__money">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"/><path d="M15 13.5h5"/></svg>
+          <span>머니ON</span>
+        </a>
+        <a href="../mypage/index.html" class="util__btn" aria-label="내 정보">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== 상단 배너 ===== -->
+    <section class="banner">
+      <div class="banner__inner">
+        <div class="banner__copy">
+          <p class="banner__lead">작은 마음도, 특별하게</p>
+          <h1>답례품을 찾아보세요</h1>
+          <p class="banner__desc">10개도 가능한 좋은 답례품, 답례 : ON 이 함께합니다.</p>
+        </div>
+
+        <!-- 선물 상자 일러스트 (CSS) -->
+        <div class="giftbox" aria-hidden="true">
+          <div class="giftbox__lid"></div>
+          <div class="giftbox__body"></div>
+          <div class="giftbox__ribbon-v"></div>
+          <div class="giftbox__ribbon-h"></div>
+          <div class="giftbox__bow giftbox__bow--l"></div>
+          <div class="giftbox__bow giftbox__bow--r"></div>
+          <div class="giftbox__knot"></div>
+          <div class="giftbox__tag">좋은<br>마음이<br>좋은 인연을<br>만듭니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- ===== 왼쪽: 필터 ===== -->
+      <aside class="filter">
+        <form action="#">
+          <div class="filter__head">
+            <h2>필터로 찾기</h2>
+            <button type="reset" class="filter__reset">필터 초기화 <span aria-hidden="true">↺</span></button>
+          </div>
+
+          <fieldset class="filter__group">
+            <legend>희망 수량 <i class="hint" title="필요한 수량을 입력하세요">?</i></legend>
+            <label class="qty">
+              <input type="number" value="10" min="1" aria-label="희망 수량">
+              <span>개</span>
+            </label>
+            <p class="filter__note">최소 주문 수량이 10개 이하인<br>상품만 보여드려요.</p>
+          </fieldset>
+
+          <fieldset class="filter__group">
+            <legend>최소 주문 수량</legend>
+            <label class="check"><input type="checkbox" checked><span></span>10개 이하</label>
+            <label class="check"><input type="checkbox"><span></span>전체 보기</label>
+          </fieldset>
+
+          <fieldset class="filter__group">
+            <legend>샘플 구매 가능 여부</legend>
+            <label class="check"><input type="checkbox" checked><span></span>샘플 구매 가능</label>
+            <label class="check"><input type="checkbox"><span></span>전체 보기</label>
+          </fieldset>
+
+          <fieldset class="filter__group">
+            <legend>예산 - 가격 (1개당) <i class="hint" title="상품 1개 기준 가격입니다">?</i></legend>
+            <label class="check"><input type="checkbox"><span></span>1만원 이하</label>
+            <label class="check"><input type="checkbox" checked><span></span>1만원 ~ 2만원</label>
+            <label class="check"><input type="checkbox"><span></span>2만원 ~ 3만원</label>
+            <label class="check"><input type="checkbox"><span></span>3만원 이상</label>
+          </fieldset>
+
+          <fieldset class="filter__group">
+            <legend>제작 기간 · 배송일 <i class="hint" title="주문 후 받기까지 걸리는 기간입니다">?</i></legend>
+            <div class="filter__row">
+              <label class="check"><input type="checkbox"><span></span>7일 이내</label>
+              <label class="check"><input type="checkbox" checked><span></span>14일 이내</label>
+            </div>
+            <label class="check"><input type="checkbox"><span></span>전체 보기</label>
+          </fieldset>
+        </form>
+      </aside>
+
+      <!-- ===== 오른쪽: 검색 결과 ===== -->
+      <section class="result">
+        <div class="result__head">
+          <h2>검색 결과 <strong>24</strong>개</h2>
+          <ul class="chips">
+            <li>최소 주문 수량 ≤ 10개 <button type="button" aria-label="최소 주문 수량 조건 삭제">×</button></li>
+            <li>샘플 구매 가능 <button type="button" aria-label="샘플 구매 가능 조건 삭제">×</button></li>
+          </ul>
+          <div class="result__tools">
+            <button type="button" class="sort">추천순 <i class="caret"></i></button>
+            <button type="button" class="view is-active" aria-label="바둑판 보기" aria-pressed="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="4.500" height="4.500" rx=".8"/><rect x="9.750" y="4" width="4.500" height="4.500" rx=".8"/><rect x="15.500" y="4" width="4.500" height="4.500" rx=".8"/><rect x="4" y="9.750" width="4.500" height="4.500" rx=".8"/><rect x="9.750" y="9.750" width="4.500" height="4.500" rx=".8"/><rect x="15.500" y="9.750" width="4.500" height="4.500" rx=".8"/><rect x="4" y="15.500" width="4.500" height="4.500" rx=".8"/><rect x="9.750" y="15.500" width="4.500" height="4.500" rx=".8"/><rect x="15.500" y="15.500" width="4.500" height="4.500" rx=".8"/></svg>
+            </button>
+            <button type="button" class="view" aria-label="목록 보기" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 7h10M9 12h10M9 17h10M5 7h.01M5 12h.01M5 17h.01"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <ul class="product-list">
+          <li class="product">
+            <a href="../buy/index.html">
+              <span class="product__thumb thumb--1">🍪<em class="sample">샘플 구매 가능</em></span>
+              <span class="product__name">달콤한 마음 쿠키세트</span>
+              <span class="product__price">12,900원</span>
+              <span class="product__meta">최소 주문 수량 <b>10개</b><i>|</i>스위트모먼츠</span>
+              <span class="product__rate"><i class="star">★</i> 4.9 <small>(320)</small></span>
+            </a>
+            <button type="button" class="product__like" aria-label="찜하기">♡</button>
+          </li>
+          <li class="product">
+            <a href="#">
+              <span class="product__thumb thumb--2">🍯<em class="sample">샘플 구매 가능</em></span>
+              <span class="product__name">자연담은 꿀 답례품</span>
+              <span class="product__price">9,900원</span>
+              <span class="product__meta">최소 주문 수량 <b>10개</b><i>|</i>하나가든</span>
+              <span class="product__rate"><i class="star">★</i> 4.8 <small>(258)</small></span>
+            </a>
+            <button type="button" class="product__like" aria-label="찜하기">♡</button>
+          </li>
+          <li class="product">
+            <a href="#">
+              <span class="product__thumb thumb--3">🧺<em class="sample">샘플 구매 가능</em></span>
+              <span class="product__name">프리미엄 타월 세트</span>
+              <span class="product__price">19,900원</span>
+              <span class="product__meta">최소 주문 수량 <b>10개</b><i>|</i>코지라이프</span>
+              <span class="product__rate"><i class="star">★</i> 4.9 <small>(417)</small></span>
+            </a>
+            <button type="button" class="product__like" aria-label="찜하기">♡</button>
+          </li>
+          <li class="product">
+            <a href="#">
+              <span class="product__thumb thumb--4">🪴<em class="sample">샘플 구매 가능</em></span>
+              <span class="product__name">행복을 전하는 반려식물</span>
+              <span class="product__price">11,900원</span>
+              <span class="product__meta">최소 주문 수량 <b>10개</b><i>|</i>초록데이</span>
+              <span class="product__rate"><i class="star">★</i> 4.8 <small>(203)</small></span>
+            </a>
+            <button type="button" class="product__like" aria-label="찜하기">♡</button>
+          </li>
+          <li class="product">
+            <a href="#">
+              <span class="product__thumb thumb--5">🕯️<em class="sample">샘플 구매 가능</em></span>
+              <span class="product__name">포근한 소이캔들</span>
+              <span class="product__price">14,900원</span>
+              <span class="product__meta">최소 주문 수량 <b>10개</b><i>|</i>라이트우드</span>
+              <span class="product__rate"><i class="star">★</i> 4.9 <small>(276)</small></span>
+            </a>
+            <button type="button" class="product__like" aria-label="찜하기">♡</button>
+          </li>
+          <li class="product">
+            <a href="#">
+              <span class="product__thumb thumb--6">🍵<em class="sample">샘플 구매 가능</em></span>
+              <span class="product__name">프리미엄 티 세트</span>
+              <span class="product__price">15,900원</span>
+              <span class="product__meta">최소 주문 수량 <b>10개</b><i>|</i>다온티컴퍼니</span>
+              <span class="product__rate"><i class="star">★</i> 4.8 <small>(189)</small></span>
+            </a>
+            <button type="button" class="product__like" aria-label="찜하기">♡</button>
+          </li>
+          <li class="product">
+            <a href="#">
+              <span class="product__thumb thumb--7">👝<em class="sample">샘플 구매 가능</em></span>
+              <span class="product__name">감사의 마음 미니파우치</span>
+              <span class="product__price">9,900원</span>
+              <span class="product__meta">최소 주문 수량 <b>10개</b><i>|</i>포근상점</span>
+              <span class="product__rate"><i class="star">★</i> 4.8 <small>(164)</small></span>
+            </a>
+            <button type="button" class="product__like" aria-label="찜하기">♡</button>
+          </li>
+          <li class="product">
+            <a href="#">
+              <span class="product__thumb thumb--8">🧼<em class="sample">샘플 구매 가능</em></span>
+              <span class="product__name">자연주의 비누세트</span>
+              <span class="product__price">12,900원</span>
+              <span class="product__meta">최소 주문 수량 <b>10개</b><i>|</i>허브앤솝</span>
+              <span class="product__rate"><i class="star">★</i> 4.9 <small>(221)</small></span>
+            </a>
+            <button type="button" class="product__like" aria-label="찜하기">♡</button>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== AI 챗봇 플로팅 버튼 ===== -->
+  <a href="#chatbot" class="chatbot" aria-label="AI 챗봇 담이 열기">
+    <span class="chatbot__face">🤖</span>
+    <span class="chatbot__label">AI 챗봇<br>'담이'</span>
+  </a>
+
+  <!-- ===== AI 챗봇 패널 (챗봇 버튼을 누르면 표시) ===== -->
+  <div class="chatpanel" id="chatbot">
+    <iframe src="../chatbot/index.html" title="AI 챗봇 담이" loading="lazy"></iframe>
+    <a href="#close" class="chatpanel__close" aria-label="챗봇 닫기">×</a>
+  </div>
+
+</body>
+</html>

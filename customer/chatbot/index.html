@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 챗봇 담이 - 답례 : ON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--
+    이 화면은 각 페이지의 챗봇 패널(iframe) 안에 표시됩니다.
+    패널 안의 링크는 target="_top" 으로 바깥 페이지를 이동시킵니다.
+  -->
+  <div class="chat">
+
+    <!-- ===== 머리줄 ===== -->
+    <header class="chat__head">
+      <span class="chat__avatar" aria-hidden="true">🤖</span>
+      <strong class="chat__title">AI 챗봇 담이</strong>
+      <!-- 패널 안에서는 바깥 페이지의 닫기 버튼이 이 자리를 덮습니다. 단독으로 열었을 때는 홈으로 이동합니다. -->
+      <a href="../../main/index.html" target="_top" class="chat__close" aria-label="닫고 홈으로 이동">×</a>
+    </header>
+
+    <!-- ===== 본문 ===== -->
+    <main class="chat__body">
+
+      <section class="hello">
+        <div class="hello__bot" aria-hidden="true">
+          <span class="hello__bow">🎀</span>
+          <span class="hello__face">🤖</span>
+          <span class="hello__heart">🧡</span>
+        </div>
+        <div class="hello__bubble">
+          <h1>안녕하세요!<br>어떤 답례품을 찾고 계신가요?</h1>
+          <p>소중한 순간에 어울리는<br>답례품을 찾아드릴게요.</p>
+        </div>
+      </section>
+
+      <nav aria-label="상황별 답례품">
+        <ul class="occasions">
+          <li><a href="../list/index.html" target="_top"><span>💍</span>결혼식</a></li>
+          <li><a href="../list/index.html" target="_top"><span>👶</span>돌잔치</a></li>
+          <li><a href="../list/index.html" target="_top"><span>💼</span>퇴사</a></li>
+          <li><a href="../list/index.html" target="_top"><span>👥</span>이직</a></li>
+          <li><a href="../list/index.html" target="_top"><span>🌼</span>장례</a></li>
+          <li><a href="../list/index.html" target="_top"><span>💮</span>조문</a></li>
+          <li><a href="../list/index.html" target="_top"><span>🏢</span>기업</a></li>
+          <li><a href="../list/index.html" target="_top"><span>🧑‍🤝‍🧑</span>단체</a></li>
+        </ul>
+      </nav>
+
+      <section class="ask">
+        <h2>이런 것도 물어보세요!</h2>
+        <ul class="ask__list">
+          <li><a href="../list/index.html" target="_top"><span aria-hidden="true">🎁</span>소량 주문</a></li>
+          <li><a href="../buy/index.html" target="_top"><span aria-hidden="true">📦</span>샘플 구매</a></li>
+          <li><a href="../list/index.html" target="_top"><span class="won" aria-hidden="true">₩</span>예산별 추천</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ===== 입력창 ===== -->
+    <form class="chat__form" action="#">
+      <input type="text" placeholder="궁금한 점을 자유롭게 물어보세요!" aria-label="챗봇에게 보낼 메시지">
+      <button type="submit" aria-label="보내기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4 10.500 13.500M20 4l-6 16-3.500-6.500L4 10z"/></svg>
+      </button>
+    </form>
+
+  </div>
+</body>
+</html>

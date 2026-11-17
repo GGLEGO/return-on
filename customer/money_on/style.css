@@ -1,0 +1,440 @@
+/* ===== 기본 설정 ===== */
+:root {
+  --coral: #e8825f;
+  --coral-dark: #d9714e;
+  --coral-soft: #fde5de;
+  --brown: #3b2a22;
+  --text: #3a302b;
+  --text-sub: #8a7d75;
+  --bg: #fbf7f3;
+  --white: #ffffff;
+  --line: #efe6df;
+  --container: 1366px;
+  --radius: 12px;
+  --shadow: 0 1px 6px rgba(120, 80, 60, .08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+em, i { font-style: normal; }
+
+/* ===== 헤더 (메인 홈과 동일) ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.header__inner {
+  max-width: 1264px;
+  height: 58px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 48px;
+  flex-shrink: 0;
+}
+.logo__icon { width: 26px; height: 26px; color: var(--coral); }
+.logo__text { font-size: 22px; font-weight: 900; color: var(--brown); letter-spacing: -0.5px; }
+.logo__text em { color: var(--coral); }
+
+.gnb { display: flex; gap: 44px; }
+.gnb a { font-size: 15px; font-weight: 500; white-space: nowrap; transition: color .2s; }
+.gnb a:hover { color: var(--coral); }
+
+.util { margin-left: auto; display: flex; align-items: center; gap: 28px; }
+.util svg { width: 24px; height: 24px; display: block; }
+.util__btn { color: var(--brown); transition: color .2s; }
+.util__btn:hover { color: var(--coral); }
+.util__money {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.util__money svg { color: var(--coral); }
+.util__money[aria-current="page"] { color: var(--coral); }
+
+/* ===== 공통 ===== */
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: 16px; height: 16px;
+  margin-left: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #6b4a3a;
+  vertical-align: -2px;
+}
+.arrow::after {
+  content: '';
+  position: absolute;
+  left: 4px; top: 5px;
+  width: 5px; height: 5px;
+  border-top: 1.5px solid var(--white);
+  border-right: 1.5px solid var(--white);
+  transform: rotate(45deg);
+}
+.more { font-size: 13px; font-weight: 500; white-space: nowrap; }
+.more span { margin-left: 6px; }
+.more:hover { color: var(--coral); }
+
+/* ===== 상단: 제목 + 잔액 카드 ===== */
+.hero {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, .7) 0%, transparent 50%),
+    linear-gradient(100deg, #fbf3ec 0%, #fae6dc 45%, #f3cdbc 75%, #eebfab 100%);
+  overflow: hidden;
+}
+.hero__inner {
+  position: relative;
+  max-width: var(--container);
+  height: 334px;
+  margin: 0 auto;
+  padding: 16px 28px 0 78px;
+}
+.hero__copy { position: relative; z-index: 2; }
+.hero__copy h1 {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: var(--brown);
+}
+.hero__copy p {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--brown);
+}
+
+.wallet {
+  position: relative;
+  z-index: 2;
+  margin-top: 22px;
+  width: 858px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 280fr 296fr 246fr;
+  gap: 18px;
+}
+.wallet__card {
+  padding: 18px 18px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 2px 10px rgba(120, 80, 60, .1);
+}
+.wallet__card--point { background: linear-gradient(120deg, #fdebe5, rgba(255, 255, 255, .85)); }
+.wallet__top { display: flex; align-items: center; gap: 14px; }
+.wallet__icon { font-size: 30px; line-height: 1; }
+.wallet__label { font-size: 14px; font-weight: 700; color: var(--brown); white-space: nowrap; }
+.wallet__amount {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  color: var(--brown);
+  white-space: nowrap;
+}
+.wallet__amount small { font-size: 15px; font-weight: 700; letter-spacing: 0; align-self: flex-end; margin-bottom: 5px; }
+.wallet__amount--coral { color: var(--coral); }
+.wallet__amount--coral small { font-size: 28px; font-weight: 900; margin-bottom: 0; }
+.wallet__charge {
+  width: 98px; height: 36px;
+  margin-left: 14px;
+  border-radius: 8px;
+  background: var(--coral);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  box-shadow: 0 3px 8px rgba(217, 113, 78, .3);
+  transition: background .2s;
+}
+.wallet__charge:hover { background: var(--coral-dark); }
+.wallet__more {
+  margin-top: 16px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 19px;
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(120, 80, 60, .1);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color .2s;
+}
+.wallet__more span { margin-left: 10px; }
+.wallet__more:hover { color: var(--coral-dark); }
+
+/* 지갑 일러스트 (CSS) */
+.purse {
+  position: absolute;
+  right: 60px;
+  bottom: 14px;
+  width: 330px;
+  height: 290px;
+}
+.purse__note {
+  position: absolute;
+  left: 90px; top: 0;
+  width: 200px; height: 170px;
+  padding: 42px 14px 0;
+  background: #fbf3e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(120, 80, 60, .18);
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 23px;
+  line-height: 1.2;
+  color: #6a5346;
+  transform: rotate(8deg);
+}
+.purse__body {
+  position: absolute;
+  left: 40px; top: 96px;
+  width: 280px; height: 180px;
+  padding: 106px 26px 0 0;
+  border: 3px dashed rgba(255, 255, 255, .55);
+  outline: 8px solid #eab8a4;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #f2c9b7, #e6ae98);
+  box-shadow: 0 10px 20px rgba(120, 70, 50, .25);
+  font-size: 30px;
+  font-weight: 700;
+  text-align: right;
+  color: #a8614c;
+  transform: rotate(6deg);
+}
+.purse__body em { color: var(--coral-dark); }
+.purse__coins { position: absolute; left: 0; bottom: 0; width: 84px; height: 70px; }
+.purse__coins i {
+  position: absolute;
+  left: 0;
+  width: 84px; height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #e9b98a, #c88f5c);
+  box-shadow: 0 3px 0 #b27a49;
+}
+.purse__coins i:nth-child(1) { bottom: 0; }
+.purse__coins i:nth-child(2) { bottom: 12px; }
+.purse__coins i:nth-child(3) { bottom: 24px; }
+
+/* ===== 내역 3단 ===== */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 16px 54px 48px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 416fr) minmax(0, 404fr) minmax(0, 394fr);
+  gap: 18px;
+  align-items: start;
+}
+.col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+.card {
+  padding: 8px 16px 12px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 34px;
+}
+.card__head h2 { font-size: 18px; font-weight: 700; color: var(--brown); white-space: nowrap; }
+
+/* 포인트 내역 */
+.history { margin-top: 6px; }
+.history li {
+  height: 51px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+}
+.history li + li { border-top: 1px solid #f6f0eb; }
+.history__icon,
+.orders__icon {
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fdeee8;
+  font-size: 20px;
+  line-height: 1;
+}
+.history__name { flex: 1; min-width: 0; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.history time { width: 92px; flex-shrink: 0; font-size: 14px; color: var(--text-sub); white-space: nowrap; }
+.history strong {
+  width: 92px;
+  flex-shrink: 0;
+  padding-right: 12px;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brown);
+  white-space: nowrap;
+}
+.history strong.plus { color: var(--coral-dark); }
+
+/* 주문 내역형 목록 */
+.orders { margin-top: 6px; }
+.orders li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.orders li + li { border-top: 1px solid #f6f0eb; }
+.orders__icon--gray { background: #f1ece8; font-size: 22px; color: var(--brown); }
+.orders__text { flex: 1; min-width: 0; font-size: 13px; line-height: 1.4; }
+.orders__side {
+  flex-shrink: 0;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.orders__side strong { font-size: 15px; font-weight: 700; color: var(--brown); }
+.orders__side--due strong { font-size: 16px; color: var(--coral-dark); }
+
+.badge {
+  min-width: 66px;
+  padding: 1px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+.badge--paid   { background: #fbd9d1; color: #c25a48; }
+.badge--refund { background: #e1f0da; color: #3c6b34; }
+
+/* ===== AI 챗봇 ===== */
+.chatbot {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200;
+  height: 68px;
+  padding: 0 18px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 34px;
+  background: var(--coral);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(217, 113, 78, .4);
+  transition: transform .2s, background .2s;
+}
+.chatbot:hover { transform: translateY(-3px); background: var(--coral-dark); }
+.chatbot__face {
+  width: 56px; height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fdf3ec;
+  font-size: 32px;
+}
+.chatbot__label { font-size: 14px; font-weight: 500; line-height: 1.3; text-align: center; }
+
+/* ===== 반응형 ===== */
+@media (max-width: 1280px) {
+  .gnb { gap: 26px; }
+  .purse { display: none; }
+  .hero__inner { height: auto; padding: 16px 24px 24px; }
+  .wallet { width: 100%; }
+  .container {
+    padding: 16px 24px 48px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .gnb { display: none; }
+  .wallet { grid-template-columns: 1fr; gap: 12px; }
+  .container { grid-template-columns: 1fr; padding-bottom: 110px; }
+}
+
+@media (max-width: 560px) {
+  .header__inner { padding: 0 16px; }
+  .logo { margin-right: 0; }
+  .util { gap: 16px; }
+  .util__money span { display: none; }
+  .hero__inner { padding: 14px 12px 20px; }
+  .hero__copy h1 { font-size: 30px; }
+  .hero__copy p { font-size: 15px; }
+  .container { padding: 12px 12px 110px; }
+  .history li { gap: 10px; }
+  .history time { display: none; }
+  .chatbot__label { display: none; }
+  .chatbot { padding: 0 6px; }
+}
+
+/* ===== AI 챗봇 패널 =====
+   챗봇 버튼(#chatbot 링크)을 누르면 오른쪽에 customer/chatbot 화면이 뜹니다. */
+.chatpanel {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  width: 396px;
+  max-width: 100vw;
+  border-radius: 16px 0 0 0;
+  background: #fbf7f3;
+  box-shadow: -6px 0 24px rgba(120, 80, 60, .22);
+  overflow: hidden;
+}
+.chatpanel:target { display: block; }
+.chatpanel iframe { display: block; width: 100%; height: 100%; border: 0; }
+.chatpanel__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: #d9977f; /* customer/chatbot/style.css 의 --head 와 같은 색 */
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+}
+@media (max-width: 560px) {
+  .chatpanel { top: 0; width: 100vw; border-radius: 0; }
+}
