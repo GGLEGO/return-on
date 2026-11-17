@@ -438,6 +438,14 @@ em, i, b { font-style: normal; }
 }
 .product__meta b { font-weight: 400; color: var(--text-sub); }
 .product__meta i { margin: 0 8px; color: #cfc5be; }
+.product__fast {
+  display: block;
+  padding: 0 6px;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--coral-dark);
+}
 .product__rate { font-size: 13px; font-weight: 700; }
 .product__rate small { font-size: 13px; font-weight: 400; color: var(--text-sub); }
 .star { color: var(--coral-dark); }
